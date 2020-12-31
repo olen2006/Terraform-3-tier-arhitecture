@@ -8,4 +8,3 @@ data "aws_ami" "latest_amazon_linux_2" {
     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
   }
 }
-#test
