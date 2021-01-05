@@ -37,8 +37,7 @@ variable "database_subnet_suffix" {
   description = "Suffix to append to database subnets name"
   type        = string
 }
-
-variable "az_subnet_count" {
+variable "subnet_count" {
   description = "Number of subnets to deploy"
   type        = number
 }
