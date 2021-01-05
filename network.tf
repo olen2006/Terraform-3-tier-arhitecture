@@ -8,10 +8,11 @@ module "vpc" {
   # insert the 14 required variables here
   name             = "${var.project}-${var.env}"
   cidr             = var.vpc_cidr
-  azs              = slice(data.aws_availability_zones.available.names, 0, var.az_subnet_count)
+  azs              = slice(data.aws_availability_zones.available.names, 0, var.subnet_count)
   private_subnets  = var.private_subnets
   public_subnets   = var.public_subnets
   database_subnets = var.database_subnets
+  #database_subnets = cidrsubnet(var.vpc_cidr, 8, 21)
 
   enable_nat_gateway     = false
   single_nat_gateway     = true
