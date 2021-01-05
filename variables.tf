@@ -45,3 +45,28 @@ variable "custom_tags" {
   description = "A map of custom tags with key value pairs which will used for the VPC resources"
   type        = map(any)
 }
+
+# Security Group variables
+variable "nginx_rules" {
+  description = "Map of known security group rules (define as 'name' = ['from port', 'to port', 'protocol', 'description'])"
+  type        = map(list(any))
+}
+variable "nginx_name" {
+  description = "Security Group Name"
+  type        = string
+
+}
+
+variable "nginx_description" {
+  description = "The description for the security group"
+  type        = string
+}
+
+variable "ports_cidr" {
+  description = "A list of ports:protocol:cidr_block:description for the security group rule"
+  type        = list(any)
+}
+variable "ports_sgid" {
+  description = "A list of ports:protocol:secuity_group_id:description for the security group rule"
+  type        = list(any)
+}
